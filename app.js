@@ -147,3 +147,19 @@ year()
     const spinWords = string => string.split(" ").map( word => word.length >= 5 ? word.split("").reverse().join(""): word).join(" ")
     console.log(spinWords("Hey fellow warriors"));
 }
+
+{
+    //qo'shimcha vazifa
+    //plastik raqami kiritiladi ushbu raqamni ayrim qismini sifrlarini yashirish kerak (masalan: 8600 1501 4586 2366 - 8600 **** **** **** 2366)
+    function card(num){
+        num = num.replace(/\s+/g, '');
+        if (num.length !== 16) {
+            return "To'g'ri kiriting";
+        }
+        let head = num.slice(0, 4);
+        let end = num.slice(-4);
+        let middle = num.slice(4, -4).replace(/\d/g, '*');
+        return `${head} ${middle} ${end}`;
+    }
+    console.log(card("8600 1501 4586 2366"));
+}
